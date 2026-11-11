@@ -1,0 +1,277 @@
+/* === Pengaturan Dasar === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --utama: #0F4C81;
+    --sekunder: #FF6B35;
+    --gelap: #2D3142;
+    --terang: #F7F9FB;
+    --abu: #E4E7EB;
+    --putih: #FFFFFF;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--gelap);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.bg-light {
+    background-color: var(--terang);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: var(--utama);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--sekunder);
+    margin: 10px auto 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--utama);
+    color: var(--putih);
+}
+
+.btn-primary:hover {
+    background-color: #0c3c66;
+}
+
+/* === Navigasi === */
+.navbar {
+    background-color: var(--putih);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--utama);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--gelap);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--utama);
+}
+
+/* === Bagian Beranda === */
+.hero {
+    background: linear-gradient(rgba(15, 76, 129, 0.85), rgba(15, 76, 129, 0.85)),
+                url('../assets/hero-bg.jpg') center/cover no-repeat;
+    color: var(--putih);
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: var(--sekunder);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === Tentang Kami === */
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat-card {
+    background-color: var(--utama);
+    color: var(--putih);
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+/* === Visi & Misi === */
+.vm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+}
+
+.vision-box, .mission-box {
+    background-color: var(--putih);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+}
+
+.vm-grid h3 {
+    color: var(--utama);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.mission-box ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.mission-box li {
+    margin-bottom: 10px;
+}
+
+/* === Layanan & Tim === */
+.services-grid, .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.service-card, .team-card {
+    background-color: var(--putih);
+    padding: 25px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    transition: transform 0.3s;
+}
+
+.service-card:hover, .team-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h4, .team-card h4 {
+    color: var(--utama);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* === Kontak === */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--abu);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+/* === Kaki Halaman === */
+footer {
+    background-color: var(--gelap);
+    color: var(--putih);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9rem;
+}
+
+/* === Tampilan HP === */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+    .about-grid, .vm-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+}
